@@ -1,6 +1,6 @@
 # kimai_python.ProjectApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *//demo-plugins.kimai.org/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,9 +13,8 @@ Method | HTTP request | Description
 [**api_projects_id_rates_rate_id_delete**](ProjectApi.md#api_projects_id_rates_rate_id_delete) | **DELETE** /api/projects/{id}/rates/{rateId} | Deletes one rate for an project
 [**api_projects_post**](ProjectApi.md#api_projects_post) | **POST** /api/projects | Creates a new project
 
-
 # **api_projects_get**
-> list[ProjectCollection] api_projects_get(customer=customer, customers=customers, visible=visible, start=start, end=end, ignore_dates=ignore_dates, order=order, order_by=order_by, term=term)
+> list[ProjectCollection] api_projects_get(customer=customer, customers=customers, visible=visible, start=start, end=end, ignore_dates=ignore_dates, global_activities=global_activities, order=order, order_by=order_by, term=term)
 
 Returns a collection of projects.
 
@@ -46,13 +45,14 @@ visible = 'visible_example' # str | Visibility status to filter projects. Allowe
 start = 'start_example' # str | Only projects that started before this date will be included. Allowed format: HTML5 (default: now, if end is also empty) (optional)
 end = 'end_example' # str | Only projects that ended after this date will be included. Allowed format: HTML5 (default: now, if start is also empty) (optional)
 ignore_dates = 'ignore_dates_example' # str | If set, start and end are completely ignored. Allowed values: 1 (default: off) (optional)
+global_activities = 'global_activities_example' # str | If given, filters projects by their 'global activity' support. Allowed values: 1 (supports global activities) and 0 (without global activities) (default: all) (optional)
 order = 'order_example' # str | The result order. Allowed values: ASC, DESC (default: ASC) (optional)
 order_by = 'order_by_example' # str | The field by which results will be ordered. Allowed values: id, name, customer (default: name) (optional)
 term = 'term_example' # str | Free search term (optional)
 
 try:
     # Returns a collection of projects.
-    api_response = api_instance.api_projects_get(customer=customer, customers=customers, visible=visible, start=start, end=end, ignore_dates=ignore_dates, order=order, order_by=order_by, term=term)
+    api_response = api_instance.api_projects_get(customer=customer, customers=customers, visible=visible, start=start, end=end, ignore_dates=ignore_dates, global_activities=global_activities, order=order, order_by=order_by, term=term)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->api_projects_get: %s\n" % e)
@@ -68,6 +68,7 @@ Name | Type | Description  | Notes
  **start** | **str**| Only projects that started before this date will be included. Allowed format: HTML5 (default: now, if end is also empty) | [optional] 
  **end** | **str**| Only projects that ended after this date will be included. Allowed format: HTML5 (default: now, if start is also empty) | [optional] 
  **ignore_dates** | **str**| If set, start and end are completely ignored. Allowed values: 1 (default: off) | [optional] 
+ **global_activities** | **str**| If given, filters projects by their &#x27;global activity&#x27; support. Allowed values: 1 (supports global activities) and 0 (without global activities) (default: all) | [optional] 
  **order** | **str**| The result order. Allowed values: ASC, DESC (default: ASC) | [optional] 
  **order_by** | **str**| The field by which results will be ordered. Allowed values: id, name, customer (default: name) | [optional] 
  **term** | **str**| Free search term | [optional] 
@@ -83,7 +84,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -140,7 +141,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -171,7 +172,7 @@ configuration.api_key['X-AUTH-USER'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kimai_python.ProjectApi(kimai_python.ApiClient(configuration))
 id = 56 # int | Project record ID to set the meta-field value for
-body = kimai_python.Body2() # Body2 |  (optional)
+body = kimai_python.IdMetaBody2() # IdMetaBody2 |  (optional)
 
 try:
     # Sets the value of a meta-field for an existing project
@@ -186,7 +187,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Project record ID to set the meta-field value for | 
- **body** | [**Body2**](Body2.md)|  | [optional] 
+ **body** | [**IdMetaBody2**](IdMetaBody2.md)|  | [optional] 
 
 ### Return type
 
@@ -198,8 +199,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -259,8 +260,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -317,12 +318,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_projects_id_rates_post**
-> ProjectRate api_projects_id_rates_post(id, body)
+> ProjectRate api_projects_id_rates_post(body, id)
 
 Adds a new rate to an project
 
@@ -347,12 +348,12 @@ configuration.api_key['X-AUTH-USER'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kimai_python.ProjectApi(kimai_python.ApiClient(configuration))
-id = 56 # int | The project to add the rate for
 body = kimai_python.ProjectRateForm() # ProjectRateForm | 
+id = 56 # int | The project to add the rate for
 
 try:
     # Adds a new rate to an project
-    api_response = api_instance.api_projects_id_rates_post(id, body)
+    api_response = api_instance.api_projects_id_rates_post(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProjectApi->api_projects_id_rates_post: %s\n" % e)
@@ -362,8 +363,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The project to add the rate for | 
  **body** | [**ProjectRateForm**](ProjectRateForm.md)|  | 
+ **id** | **int**| The project to add the rate for | 
 
 ### Return type
 
@@ -375,8 +376,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -492,8 +493,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

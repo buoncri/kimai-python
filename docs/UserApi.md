@@ -1,6 +1,6 @@
 # kimai_python.UserApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *//demo-plugins.kimai.org/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**api_users_id_patch**](UserApi.md#api_users_id_patch) | **PATCH** /api/users/{id} | Update an existing user
 [**api_users_me_get**](UserApi.md#api_users_me_get) | **GET** /api/users/me | Return the current user entity
 [**api_users_post**](UserApi.md#api_users_post) | **POST** /api/users | Creates a new user
-
 
 # **api_users_get**
 > list[UserCollection] api_users_get(visible=visible, order_by=order_by, order=order, term=term)
@@ -70,7 +69,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -127,7 +126,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -187,8 +186,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -241,7 +240,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -299,8 +298,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

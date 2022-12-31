@@ -1,10 +1,12 @@
 # kimai_python.TeamApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *//demo-plugins.kimai.org/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**api_teams_get**](TeamApi.md#api_teams_get) | **GET** /api/teams | Fetch all existing teams
+[**api_teams_id_activities_activity_id_delete**](TeamApi.md#api_teams_id_activities_activity_id_delete) | **DELETE** /api/teams/{id}/activities/{activityId} | Revokes access for an activity from a team
+[**api_teams_id_activities_activity_id_post**](TeamApi.md#api_teams_id_activities_activity_id_post) | **POST** /api/teams/{id}/activities/{activityId} | Grant the team access to an activity
 [**api_teams_id_customers_customer_id_delete**](TeamApi.md#api_teams_id_customers_customer_id_delete) | **DELETE** /api/teams/{id}/customers/{customerId} | Revokes access for a customer from a team
 [**api_teams_id_customers_customer_id_post**](TeamApi.md#api_teams_id_customers_customer_id_post) | **POST** /api/teams/{id}/customers/{customerId} | Grant the team access to a customer
 [**api_teams_id_delete**](TeamApi.md#api_teams_id_delete) | **DELETE** /api/teams/{id} | Delete a team
@@ -15,7 +17,6 @@ Method | HTTP request | Description
 [**api_teams_id_projects_project_id_delete**](TeamApi.md#api_teams_id_projects_project_id_delete) | **DELETE** /api/teams/{id}/projects/{projectId} | Revokes access for a project from a team
 [**api_teams_id_projects_project_id_post**](TeamApi.md#api_teams_id_projects_project_id_post) | **POST** /api/teams/{id}/projects/{projectId} | Grant the team access to a project
 [**api_teams_post**](TeamApi.md#api_teams_post) | **POST** /api/teams | Creates a new team
-
 
 # **api_teams_get**
 > list[TeamCollection] api_teams_get()
@@ -66,12 +67,130 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_teams_id_activities_activity_id_delete**
+> Team api_teams_id_activities_activity_id_delete(id, activity_id)
+
+Revokes access for an activity from a team
+
+### Example
+```python
+from __future__ import print_function
+import time
+import kimai_python
+from kimai_python.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apiToken
+configuration = kimai_python.Configuration()
+configuration.api_key['X-AUTH-TOKEN'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-AUTH-TOKEN'] = 'Bearer'
+# Configure API key authorization: apiUser
+configuration = kimai_python.Configuration()
+configuration.api_key['X-AUTH-USER'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-AUTH-USER'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kimai_python.TeamApi(kimai_python.ApiClient(configuration))
+id = 56 # int | The team whose permission will be revoked
+activity_id = 56 # int | The activity to remove (Activity ID)
+
+try:
+    # Revokes access for an activity from a team
+    api_response = api_instance.api_teams_id_activities_activity_id_delete(id, activity_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->api_teams_id_activities_activity_id_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The team whose permission will be revoked | 
+ **activity_id** | **int**| The activity to remove (Activity ID) | 
+
+### Return type
+
+[**Team**](Team.md)
+
+### Authorization
+
+[apiToken](../README.md#apiToken), [apiUser](../README.md#apiUser)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **api_teams_id_activities_activity_id_post**
+> Team api_teams_id_activities_activity_id_post(id, activity_id)
+
+Grant the team access to an activity
+
+### Example
+```python
+from __future__ import print_function
+import time
+import kimai_python
+from kimai_python.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: apiToken
+configuration = kimai_python.Configuration()
+configuration.api_key['X-AUTH-TOKEN'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-AUTH-TOKEN'] = 'Bearer'
+# Configure API key authorization: apiUser
+configuration = kimai_python.Configuration()
+configuration.api_key['X-AUTH-USER'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-AUTH-USER'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kimai_python.TeamApi(kimai_python.ApiClient(configuration))
+id = 56 # int | The team that is granted access
+activity_id = 56 # int | The activity to grant acecess to (Activity ID)
+
+try:
+    # Grant the team access to an activity
+    api_response = api_instance.api_teams_id_activities_activity_id_post(id, activity_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamApi->api_teams_id_activities_activity_id_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The team that is granted access | 
+ **activity_id** | **int**| The activity to grant acecess to (Activity ID) | 
+
+### Return type
+
+[**Team**](Team.md)
+
+### Authorization
+
+[apiToken](../README.md#apiToken), [apiUser](../README.md#apiUser)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_teams_id_customers_customer_id_delete**
-> TeamEntity api_teams_id_customers_customer_id_delete(id, customer_id)
+> Team api_teams_id_customers_customer_id_delete(id, customer_id)
 
 Revokes access for a customer from a team
 
@@ -116,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamEntity**](TeamEntity.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -125,12 +244,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_teams_id_customers_customer_id_post**
-> TeamEntity api_teams_id_customers_customer_id_post(id, customer_id)
+> Team api_teams_id_customers_customer_id_post(id, customer_id)
 
 Grant the team access to a customer
 
@@ -175,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamEntity**](TeamEntity.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -184,7 +303,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -245,7 +364,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_teams_id_get**
-> TeamEntity api_teams_id_get(id)
+> Team api_teams_id_get(id)
 
 Returns one team
 
@@ -288,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamEntity**](TeamEntity.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -297,12 +416,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_teams_id_members_user_id_delete**
-> TeamEntity api_teams_id_members_user_id_delete(id, user_id)
+> Team api_teams_id_members_user_id_delete(id, user_id)
 
 Removes a member from the team
 
@@ -347,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamEntity**](TeamEntity.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -356,12 +475,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_teams_id_members_user_id_post**
-> TeamEntity api_teams_id_members_user_id_post(id, user_id)
+> Team api_teams_id_members_user_id_post(id, user_id)
 
 Add a new member to a team
 
@@ -406,7 +525,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamEntity**](TeamEntity.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -415,16 +534,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_teams_id_patch**
-> TeamEntity api_teams_id_patch(body, id)
+> Team api_teams_id_patch(body, id)
 
 Update an existing team
 
-Update an existing team, you can pass all or just a subset of all attributes (passing users will replace all existing ones)
+Update an existing team, you can pass all or just a subset of all attributes (passing members will replace all existing ones)
 
 ### Example
 ```python
@@ -467,7 +586,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamEntity**](TeamEntity.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -475,13 +594,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_teams_id_projects_project_id_delete**
-> TeamEntity api_teams_id_projects_project_id_delete(id, project_id)
+> Team api_teams_id_projects_project_id_delete(id, project_id)
 
 Revokes access for a project from a team
 
@@ -526,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamEntity**](TeamEntity.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -535,12 +654,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_teams_id_projects_project_id_post**
-> TeamEntity api_teams_id_projects_project_id_post(id, project_id)
+> Team api_teams_id_projects_project_id_post(id, project_id)
 
 Grant the team access to a project
 
@@ -585,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamEntity**](TeamEntity.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -594,12 +713,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_teams_post**
-> TeamEntity api_teams_post(body)
+> Team api_teams_post(body)
 
 Creates a new team
 
@@ -644,7 +763,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TeamEntity**](TeamEntity.md)
+[**Team**](Team.md)
 
 ### Authorization
 
@@ -652,8 +771,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

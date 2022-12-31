@@ -1,6 +1,6 @@
 # kimai_python.ActivityApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *//demo-plugins.kimai.org/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**api_activities_id_rates_post**](ActivityApi.md#api_activities_id_rates_post) | **POST** /api/activities/{id}/rates | Adds a new rate to an activity
 [**api_activities_id_rates_rate_id_delete**](ActivityApi.md#api_activities_id_rates_rate_id_delete) | **DELETE** /api/activities/{id}/rates/{rateId} | Deletes one rate for an activity
 [**api_activities_post**](ActivityApi.md#api_activities_post) | **POST** /api/activities | Creates a new activity
-
 
 # **api_activities_get**
 > list[ActivityCollection] api_activities_get(project=project, projects=projects, visible=visible, globals=globals, globals_first=globals_first, order_by=order_by, order=order, term=term)
@@ -81,7 +80,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -138,7 +137,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -169,7 +168,7 @@ configuration.api_key['X-AUTH-USER'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kimai_python.ActivityApi(kimai_python.ApiClient(configuration))
 id = 56 # int | Activity record ID to set the meta-field value for
-body = kimai_python.Body() # Body |  (optional)
+body = kimai_python.IdMetaBody() # IdMetaBody |  (optional)
 
 try:
     # Sets the value of a meta-field for an existing activity
@@ -184,7 +183,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Activity record ID to set the meta-field value for | 
- **body** | [**Body**](Body.md)|  | [optional] 
+ **body** | [**IdMetaBody**](IdMetaBody.md)|  | [optional] 
 
 ### Return type
 
@@ -196,8 +195,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -257,8 +256,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -315,12 +314,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_activities_id_rates_post**
-> ActivityRate api_activities_id_rates_post(id, body)
+> ActivityRate api_activities_id_rates_post(body, id)
 
 Adds a new rate to an activity
 
@@ -345,12 +344,12 @@ configuration.api_key['X-AUTH-USER'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kimai_python.ActivityApi(kimai_python.ApiClient(configuration))
-id = 56 # int | The activity to add the rate for
 body = kimai_python.ActivityRateForm() # ActivityRateForm | 
+id = 56 # int | The activity to add the rate for
 
 try:
     # Adds a new rate to an activity
-    api_response = api_instance.api_activities_id_rates_post(id, body)
+    api_response = api_instance.api_activities_id_rates_post(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActivityApi->api_activities_id_rates_post: %s\n" % e)
@@ -360,8 +359,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The activity to add the rate for | 
  **body** | [**ActivityRateForm**](ActivityRateForm.md)|  | 
+ **id** | **int**| The activity to add the rate for | 
 
 ### Return type
 
@@ -373,8 +372,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -490,8 +489,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

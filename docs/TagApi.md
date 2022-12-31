@@ -1,13 +1,12 @@
 # kimai_python.TagApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *//demo-plugins.kimai.org/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**api_tags_get**](TagApi.md#api_tags_get) | **GET** /api/tags | Fetch all existing tags
 [**api_tags_id_delete**](TagApi.md#api_tags_id_delete) | **DELETE** /api/tags/{id} | Delete a tag
 [**api_tags_post**](TagApi.md#api_tags_post) | **POST** /api/tags | Creates a new tag
-
 
 # **api_tags_get**
 > list[str] api_tags_get(name=name)
@@ -62,7 +61,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -176,8 +175,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

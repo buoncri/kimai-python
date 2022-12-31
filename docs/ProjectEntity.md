@@ -13,12 +13,14 @@ Name | Type | Description | Notes
 **end** | **datetime** |  | [optional] 
 **comment** | **str** |  | [optional] 
 **visible** | **bool** |  | 
-**budget** | **float** |  | 
-**time_budget** | **int** |  | 
+**billable** | **bool** |  | 
 **meta_fields** | [**list[ProjectMeta]**](ProjectMeta.md) | All visible meta (custom) fields registered with this project | [optional] 
 **teams** | [**list[Team]**](Team.md) | If no team is assigned, everyone can access the project (also depends on the teams of the customer) | [optional] 
+**global_activities** | **bool** |  | 
+**budget** | **float** |  | 
+**time_budget** | **int** |  | 
+**budget_type** | **str** |  | [optional] 
 **color** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

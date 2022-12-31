@@ -1,6 +1,6 @@
 # kimai_python.CustomerApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *//demo-plugins.kimai.org/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**api_customers_id_rates_post**](CustomerApi.md#api_customers_id_rates_post) | **POST** /api/customers/{id}/rates | Adds a new rate to a customer
 [**api_customers_id_rates_rate_id_delete**](CustomerApi.md#api_customers_id_rates_rate_id_delete) | **DELETE** /api/customers/{id}/rates/{rateId} | Deletes one rate for an customer
 [**api_customers_post**](CustomerApi.md#api_customers_post) | **POST** /api/customers | Creates a new customer
-
 
 # **api_customers_get**
 > list[CustomerCollection] api_customers_get(visible=visible, order=order, order_by=order_by, term=term)
@@ -73,7 +72,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -130,7 +129,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -161,7 +160,7 @@ configuration.api_key['X-AUTH-USER'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kimai_python.CustomerApi(kimai_python.ApiClient(configuration))
 id = 56 # int | Customer record ID to set the meta-field value for
-body = kimai_python.Body1() # Body1 |  (optional)
+body = kimai_python.IdMetaBody1() # IdMetaBody1 |  (optional)
 
 try:
     # Sets the value of a meta-field for an existing customer
@@ -176,7 +175,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| Customer record ID to set the meta-field value for | 
- **body** | [**Body1**](Body1.md)|  | [optional] 
+ **body** | [**IdMetaBody1**](IdMetaBody1.md)|  | [optional] 
 
 ### Return type
 
@@ -188,8 +187,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -249,8 +248,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -307,12 +306,12 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_customers_id_rates_post**
-> CustomerRate api_customers_id_rates_post(id, body)
+> CustomerRate api_customers_id_rates_post(body, id)
 
 Adds a new rate to a customer
 
@@ -337,12 +336,12 @@ configuration.api_key['X-AUTH-USER'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kimai_python.CustomerApi(kimai_python.ApiClient(configuration))
-id = 56 # int | The customer to add the rate for
 body = kimai_python.CustomerRateForm() # CustomerRateForm | 
+id = 56 # int | The customer to add the rate for
 
 try:
     # Adds a new rate to a customer
-    api_response = api_instance.api_customers_id_rates_post(id, body)
+    api_response = api_instance.api_customers_id_rates_post(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomerApi->api_customers_id_rates_post: %s\n" % e)
@@ -352,8 +351,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The customer to add the rate for | 
  **body** | [**CustomerRateForm**](CustomerRateForm.md)|  | 
+ **id** | **int**| The customer to add the rate for | 
 
 ### Return type
 
@@ -365,8 +364,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -482,8 +481,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: */*
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

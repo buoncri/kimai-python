@@ -9,11 +9,13 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **comment** | **str** |  | [optional] 
 **visible** | **bool** |  | 
+**billable** | **bool** |  | 
+**meta_fields** | [**list[ActivityMeta]**](ActivityMeta.md) | All visible meta (custom) fields registered with this activity | [optional] 
+**teams** | [**list[Team]**](Team.md) | If no team is assigned, everyone can access the activity | [optional] 
 **budget** | **float** |  | 
 **time_budget** | **int** |  | 
-**meta_fields** | [**list[ActivityMeta]**](ActivityMeta.md) | All visible meta (custom) fields registered with this activity | [optional] 
+**budget_type** | **str** |  | [optional] 
 **color** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 
